@@ -1,99 +1,83 @@
 <style>
-  body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    height: 100vh;
-    margin: 0;
-  }
-  #label{
-    font-size: 1.5em;
-    font-family: monospace;
-    position: absolute;
-    top: 30%;
-    color: white;
-  }
-  #label2{
-    font-size: 1.5em;
-    font-family: monospace;
-    position: absolute;
-    top: 22%;
-    color: white;
-  }
   button{
     padding: 10px 20px;
-    margin: 10px 20px;
+    margin: 5px;
+    background-color: rgba(50,50,50,0.7);
+    color: rgb(200,200,200);
     border: 1px solid white;
-    background-color: black;
-    color: white;
-    cursor: pointer;
+    border-radius: 10px;
   }
-  #label3{
-    font-size: 1.5em;
-    font-family: monospace;
-    position: absolute;
-    top: 5%;
+  input{
+    padding: 10px 35px;
+    background-color: rgb(70,70,70);
+    border:1px solid white;
+    border-radius:10px;
     color: white;
+    margin: 5px 5px;
   }
-</style>
-<body>
-<label id="label2">you choose : </label><br>
-<label id="label"> ROCK , PAPER AND SCISSOR</label><br>
-<button id="rock">ROCK</button>
-<button id="paper">PAPER</button>
-<button id="scissor">SCISSOR</button>
-<label id="label3">score</label>
+  div{
+    height: 275px;
+    width: 260px;
+    border:1px solid black;
+    position:absolute;
+    background-color:rgb(100,100,100);
+    border-radius:10px;
+  }
+  #eb{width: 240px;}
+  #acb{width: 50px;}
+</style><div>
+<input id="input" readonly><br>
+<button id="7b">7</button>
+<button id="8b">8</button>
+<button id="9b">9</button>
+<button id="mb">*</button><br>
+<button id="4b">4</button>
+<button id="5b">5</button>
+<button id="6b">6</button>
+<button id="mib">-</button><br>
+<button id="1b">1</button>
+<button id="2b">2</button>
+<button id="3b">3</button>
+<button id="pb">+</button><br>
+<button id="0b">0</button>
+<button id="acb">AC</button>
+<button id="db">.</button>
+<button id="cb">C</button><br>
+<button id="eb">=</button></div>
 <script>
-  var scissor = document.getElementById('scissor');
-  var rock = document.getElementById('rock');
-  var paper = document.getElementById('paper');
-  var label = document.getElementById('label');
-  var label2 = document.getElementById('label2');
-  var label3 = document.getElementById('label3');
-  var count = 0;
-  scissor.onclick = function(){
-    var cpu = Math.floor(Math.random() * 3) + 1;
-    label2.textContent = 'scissor';
-    if (cpu === 3) {
-      label.textContent = 'paper - YOU WIN!'; 
-      count++;
-    }
-    else if (cpu === 2) { 
-      label.textContent = 'rock - YOU LOSE!';
-      count--;
-    } else if (cpu === 1) { 
-      label.textContent = 'scissor - TIE!';
-    }
-    label3.textContent = count;
-  }
-  rock.onclick = function(){
-    var cpu = Math.floor(Math.random() * 3) + 1;
-    label2.textContent = 'rock';
-    if (cpu === 1) { 
-      label.textContent = 'scissor - YOU WIN!' ;
-      count++;
-    }else if (cpu === 3) { 
-      label.textContent = 'paper - YOU LOSE!';
-      count--;
-    }else if (cpu === 2) { 
-      label.textContent = 'rock - TIE!';
-    }
-    label3.textContent = count;
-  }
-  paper.onclick = function(){
-    var cpu = Math.floor(Math.random() * 3) + 1;
-    label2.textContent = 'paper';
-    if (cpu === 2) { 
-      label.textContent = 'rock - YOU WIN!' ;
-      count++;
-    }
-    else if (cpu === 1) { 
-      label.textContent = 'scissor - YOU LOSE!' ;
-      count--;
-    }
-    else if (cpu === 3) { 
-      label.textContent = 'paper - TIE!';
-    }
-    label3.textContent = count;
-  }</script></body>
+const input = document.getElementById('input');
+  const b7 = document.getElementById('7b');
+  const b8 = document.getElementById('8b');
+  const b9 = document.getElementById('9b');
+  const mb = document.getElementById('mb');
+  const b4 = document.getElementById('4b');
+  const b5 = document.getElementById('5b');
+  const b6 = document.getElementById('6b');
+  const mib = document.getElementById('mib');
+  const b1 = document.getElementById('1b');
+  const b2 = document.getElementById('2b');
+  const b3 = document.getElementById('3b');
+  const b0 = document.getElementById('0b');
+  const pb = document.getElementById('pb');
+  const db = document.getElementById('db');
+  const acb = document.getElementById('acb');
+  const cb = document.getElementById('cb');
+  const eb = document.getElementById('eb');
+  b7.onclick = function(){input.value = input.value + '7'}
+  b8.onclick = function(){input.value = input.value + '8'}
+  b9.onclick = function(){input.value = input.value + '9' }
+  mb.onclick = function(){input.value = input.value + '*' }
+  b4.onclick = function(){input.value = input.value + '4' }
+  b5.onclick = function(){input.value = input.value + '5' }
+  b6.onclick = function(){input.value = input.value + '6' }
+  mib.onclick = function(){input.value = input.value + '-' }
+  b1.onclick = function(){input.value = input.value + '1' }
+  b2.onclick = function(){input.value = input.value + '2' }
+  b3.onclick = function(){input.value = input.value + '3' }
+  pb.onclick = function(){input.value = input.value + '+' }
+  acb.onclick = function(){input.value = ' ' }
+  db.onclick = function(){input.value = input.value + '.'}
+  b0.onclick = function(){input.value = input.value + '0'}
+  cb.onclick = function(){input.value = input.value.slice(0,-1) }
+  eb.onclick = function(){input.value = eval(input.value)}
+</script>
